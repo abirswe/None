@@ -1,0 +1,42 @@
+import random
+
+print("Number guessing game")
+
+# randint function to generate the
+# random number b/w 1 to 20
+number = random.randint(1, 20)
+
+
+chances = 0
+
+print("Guess a number (between 1 and 20):")
+
+
+while chances < 10:
+
+    # Enter a number between 1 to 9
+    guess = int(input())
+
+    # Compare the user entered number
+    # with the number to be guessed
+    if guess == number:
+
+
+        print("Congratulation YOU WON!!!")
+        break
+
+
+    elif guess < number:
+        print("Your guess was too low: Guess a number higher than", guess)
+
+
+    else:
+        print("Your guess was too high: Guess a number lower than", guess)
+
+        # Increase the value of chance by 1
+    chances += 1
+
+# Check whether the user
+# guessed the correct number
+if not chances < 5:
+    print("YOU LOSE!!! The number is", number)
